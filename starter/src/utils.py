@@ -1,5 +1,22 @@
+"""
+This module includes utility functions for training the model
+"""
+import pandas as pd
+import joblib
 import numpy as np
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
+
+def load_data(path):
+    "Import data from specified path and return a dataframe"
+
+    df =  pd.read_csv(path)
+    return df
+
+
+def load_artifact(artifact_path):
+    "Load artifact"
+
+    return joblib.load(artifact_path)
 
 
 def process_data(
@@ -68,3 +85,20 @@ def process_data(
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)
     return X, y, encoder, lb
+
+
+def get_cat_features():
+    """ Return a list of categorical features"""
+    
+    cat_features = [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country",
+    ]
+
+    return cat_features
