@@ -104,9 +104,9 @@ class ModelInput(BaseModel):
 
 
 # Load artifacts
-model = load_artifact("model/model.pkl")
-encoder = load_artifact("model/encoder.pkl")
-lb = load_artifact("model/lb.pkl")
+model = load_artifact("starter/model/model.pkl")
+encoder = load_artifact("starter/model/encoder.pkl")
+lb = load_artifact("starter/model/lb.pkl")
 
 
 # Root path
