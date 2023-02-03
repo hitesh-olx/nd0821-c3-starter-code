@@ -42,7 +42,4 @@ python main.py
 python heroku_api_request.py
 ```
 
-### GitHub Actions  
 
-The machine learning pipeline is deployed automatically in a CI/CD fashion. The model artifacts and the data are pulled
-from a S3 bucket using DVC. After successfully passing the tests, the code is automaticaly pushed to the Heroku instance.
