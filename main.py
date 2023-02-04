@@ -3,7 +3,10 @@ This module contains the code for the API
 """
 import os
 from fastapi import FastAPI
-from typing import Literal
+try:
+    from typing import Literal
+except ImportError:
+    from typing_extensions import Literal
 from pandas import DataFrame
 import numpy as np
 import uvicorn
