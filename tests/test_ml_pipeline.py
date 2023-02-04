@@ -49,7 +49,7 @@ def test_model():
     """ Check model type """
 
     model = utils.load_artifact(MODEL_PATH)
-    assert isinstance(model, RandomForestClassifier)
+    assert isinstance(model, XGBClassifier)
 
 
 def test_process_data(data):
