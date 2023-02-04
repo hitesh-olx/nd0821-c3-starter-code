@@ -11,14 +11,6 @@ from pydantic import BaseModel
 from src.utils import load_artifact, process_data, get_cat_features
 from src.model import inference
 
-# Set up DVC on Heroku
-if "DYNO" in os.environ and os.path.isdir(".dvc"):
-    os.system("dvc config core.no_scm true")
-    if os.system("dvc pull") != 0:
-        exit("dvc pull failed")
-    os.system("rm -r .dvc .apt/usr/lib/dvc")
-
-
 
 # Create app
 app = FastAPI()
@@ -104,9 +96,9 @@ class ModelInput(BaseModel):
 
 
 # Load artifacts
-model = load_artifact("starter/model/model.pkl")
-encoder = load_artifact("starter/model/encoder.pkl")
-lb = load_artifact("starter/model/lb.pkl")
+model = load_artifact("model/model.pkl")
+encoder = load_artifact("model/encoder.pkl")
+lb = load_artifact("model/lb.pkl")
 
 
 # Root path

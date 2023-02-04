@@ -7,14 +7,14 @@ import logging
 import pandas as pd
 import pytest
 from src import utils
-from sklearn.ensemble import RandomForestClassifier
+from xgb import XGBClassifier
 from sklearn.model_selection import train_test_split
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 
 
-DATA_PATH = 'starter/data/clean_census.csv'
-MODEL_PATH = 'starter/model/model.pkl'
+DATA_PATH = 'data/clean_census.csv'
+MODEL_PATH = 'model/model.pkl'
 
 cat_features = [
     "workclass",
