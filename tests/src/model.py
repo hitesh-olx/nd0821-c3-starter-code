@@ -3,7 +3,7 @@ This module defines the functions for model, metrics and inference
 """
 
 from sklearn.metrics import fbeta_score, precision_score, recall_score
-from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
 
 
 def train_model(X_train, y_train):
@@ -22,11 +22,11 @@ def train_model(X_train, y_train):
         Trained machine learning model.
     """
 
-    rf = RandomForestClassifier(random_state=42, n_jobs=-1)
+    # fit model on training data
+    model = XGBClassifier()
+    model.fit(X_train, y_train)
 
-    rf.fit(X_train, y_train)
-
-    return rf
+    return model
 
 
 def compute_model_metrics(y, preds):
