@@ -1,11 +1,10 @@
-# Deploying a Machine Learning Model on Heroku with FastAPI  
+# Deploying Machine Learning Model on Render
 
-This project contains the development of a classification model on Census Bureau data. 
+This project contains the development of a classification model[XG Boost Model] on Census Bureau data. 
 The main goal is to robustly deploy a machine learning model into production.  
 This includes: 
-* versioning the data and the models using Data Version Control (DVC).
-* testing the code using pytest
-* deploying the model using the FastAPI package and creating API tests on Heroku
+* testing using pytest
+* deploying the model using the FastAPI package and creating API tests on Render
 * incorporating the ML pipeline into a CI/CD framework using GitHub Actions.
 
 ### Environment Set up  
@@ -34,12 +33,12 @@ python src/train_model.py
 python main.py
 ```
 
-### Heroku deployment  
+### Render deployment  
 
-* Alternatively test the model live on Heroku by executing a POST request:
+* Alternatively test the model live on Render by executing a POST request:
 
 ```
-python heroku_api_request.py
+python render_api_request.py
 ```
 
 
