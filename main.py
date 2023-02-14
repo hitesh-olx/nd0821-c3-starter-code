@@ -1,5 +1,5 @@
 """
-This module contains the code for the API
+This module has the code for the API
 """
 import os
 from fastapi import FastAPI
@@ -15,7 +15,7 @@ from src.utils import load_artifact, process_data, get_cat_features
 from src.model import inference
 
 
-# Create app
+# Creating application
 app = FastAPI()
 
 # POST Input Schema

@@ -13,13 +13,14 @@ def train_model(X_train, y_train):
     Inputs
     ------
     X_train : np.array
-        Training data.
+    Training data [Independent data]
     y_train : np.array
-        Labels.
+    Actual label against training data.
+        
     Returns
     -------
     model
-        Trained machine learning model.
+    Machine learning model [Basically the equation which is fit by the ML model using the variables of training set]
     """
 
     # fit model on training data
@@ -31,7 +32,7 @@ def train_model(X_train, y_train):
 
 def compute_model_metrics(y, preds):
     """
-    Validates the trained machine learning model using precision, recall, and F1.
+    Validates the ML model metrics 
 
     Inputs
     ------
@@ -41,9 +42,9 @@ def compute_model_metrics(y, preds):
         Predicted labels, binarized.
     Returns
     -------
-    precision : float
-    recall : float
-    fbeta : float
+    precision : [% of Model Positives being actually positives]
+    recall : [% of TP covered by model]
+
     """
     fbeta = fbeta_score(y, preds, beta=1, zero_division=1)
     precision = precision_score(y, preds, zero_division=1)
