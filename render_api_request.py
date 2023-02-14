@@ -1,5 +1,5 @@
 """
-Test the live prediction endpoint on Heroku
+Testing live prediction from Render Application
 """
 import requests
 import logging
