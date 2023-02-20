@@ -18,7 +18,7 @@ from src.model import inference
 # Creating application
 app = FastAPI()
 
-# POST Input Schema
+# POST Input Schema Literals  to ensure correct input to the model
 
 
 class ModelInput(BaseModel):
@@ -98,19 +98,19 @@ class ModelInput(BaseModel):
         }
 
 
-# Load artifacts
+# Load artifacts [Load the model and label encoders]
 model = load_artifact("model/model.pkl")
 encoder = load_artifact("model/encoder.pkl")
 lb = load_artifact("model/lb.pkl")
 
 
-# Root path
+# Root path [Application Load Root]
 @app.get("/")
 async def root():
     return {
         "Hi": "This app predicts wether income exceeds $50K/yr based on census data."}
 
-# Prediction path
+# Prediction path [a path that cuts to get a salary prediction this is to be used in URL of application]
 @app.post("/predict-income")
 async def predict(input: ModelInput):
 

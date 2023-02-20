@@ -9,15 +9,15 @@ client = TestClient(app)
 
 
 def test_get_root():
-    """ Test the root page get a succesful response"""
+    """ Test the root page to get a succesful response"""
     r = client.get("/")
     assert r.status_code == 200
     assert r.json() == {
-        "Hi": "This app predicts wether income exceeds $50K/yr based on census data."}
+        "Hi": "This app predicts wether income exceeds $50K/yr based on census data which includes Age, Workclass, Education, Occupation etc factors. This is based on the XGB model trained on Census data"}
 
 
 def test_post_predict_up():
-    """ Test an example when income is less than 50K """
+    """ Testing  an example when income is less than 50K """
 
     r = client.post("/predict-income", json={
         "age": 37,
@@ -41,7 +41,7 @@ def test_post_predict_up():
 
 
 def test_post_predict_down():
-    """ Test an example when income is higher than 50K """
+    """ Testin an example when income is higher than 50K """
     r = client.post("/predict-income", json={
         "age": 28,
         "workclass": "Private",

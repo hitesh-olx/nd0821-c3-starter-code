@@ -1,18 +1,15 @@
 # Deploying Machine Learning Model on Render
 
-This project contains the development of a classification model[XG Boost Model] on Census Bureau data. 
-The main goal is to robustly deploy a machine learning model into production.  
-This includes: 
-* testing using pytest
-* deploying the model using the FastAPI package and creating API tests on Render
-* incorporating the ML pipeline into a CI/CD framework using GitHub Actions.
+This project contains the development of a classification model[XG Boost Classification ] on Census data. 
+The goal is to robustly deploy a ML model into production with CI/CD 
 
-### Environment Set up  
+* test using pytest: Basic testing on Github Commits
+* deploying bycreating API and tests on Render
+* ML pipeline into a CI/CD framework using GitHub Actions.
 
-* Download and install conda if you don’t have it already.
-    * Use the supplied requirements file to create a new environment
+### Environment creation  
 
-    ```
+  ```
     conda env create -f environment.yml
     ```
     * activate the env
@@ -23,19 +20,19 @@ This includes:
 
 ### Model  
 
-* To train the model run:
+* Train the model by runnig:
 ``` 
 python src/train_model.py
 ```
 
-* or run the entire ML pipeline which starts a local server where you can test the model
+* Run the entire ML pipeline by the command on Terminal
 ```
 python main.py
 ```
 
 ### Render deployment  
 
-* Alternatively test the model live on Render by executing a POST request:
+* Test the live model  on Render by running: 
 
 ```
 python render_api_request.py
