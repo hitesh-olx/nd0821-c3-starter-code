@@ -13,7 +13,7 @@ def test_get_root():
     r = client.get("/")
     assert r.status_code == 200
     assert r.json() == {
-        "Hi This app predicts wether income exceeds $50K/yr based on census data which includes Age, Workclass, Education, Occupation etc factors. This is based on the XGB model trained on Census data"}
+        'Hi': 'This app predicts wether income exceeds $50K/yr based on census data.'}
 
 
 def test_post_predict_up():
