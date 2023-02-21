@@ -43,7 +43,12 @@ def test_load_data(data):
     assert data.shape[0]>0
     assert data.shape[1]>0
 
+def test_model():
 
+    """ Check model type """
+
+    model = utils.load_artifact(MODEL_PATH)
+    assert isinstance(model,XGBClassifier )
 
 
 def test_process_data(data):
